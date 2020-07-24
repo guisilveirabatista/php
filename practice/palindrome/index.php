@@ -2,9 +2,10 @@
 
 function run()
 {
-    $palindrome = "Sanaskrit";
+    $palindrome = "Banana";
     $aux = "";
     $longest = "";
+    echo "Palindromes found:<br/>";
     try {
         $palindrome = strtolower($palindrome);
         for ($i = 0; $i < strlen($palindrome); $i++) {
@@ -16,7 +17,7 @@ function run()
                 }
             }
         }
-        echo $longest;
+        echo "<br/>Longest:<br/>" . $longest;
     } catch (Exception $e) {
         echo $e->getMessage();
     }
@@ -24,6 +25,9 @@ function run()
 
 function checkIsPalindrome($aux)
 {
+    if ($aux == strrev($aux)) {
+        echo $aux . "<br/>";
+    }
     return $aux == strrev($aux);
 }
 
